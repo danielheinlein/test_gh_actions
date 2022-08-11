@@ -19,9 +19,6 @@ jobs:
       - name: Doxygen Action
         uses: mattnotmitt/doxygen-action@1.9.4
 
-      - name: Build
-        run: doxygen Doxyfile
-
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         # If you're changing the branch from main, 
