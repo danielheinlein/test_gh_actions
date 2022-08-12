@@ -3,5 +3,6 @@ project(hello_world)
 
 add_executable(hello_world src/main.cpp)
 
-enable_testing()
+include(CTest)
+# enable_testing()
 add_test(NAME test_exec COMMAND hello_world)
