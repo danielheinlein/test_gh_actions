@@ -2,9 +2,10 @@
 
 This project demonstrates the usage of github actions to
 
-- run cmake to configure, compile, test
+- run [cmake](https://cmake.org/) to configure, compile, test
 - the last step includes coverage
-- creation of doxygen documentation
+- [address sanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer), [leak sanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizerLeakSanitizer), [undefined behavior sanitizer](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html)
+- creation of [doxygen](https://doxygen.nl/) documentation
 - publishing to github pages
 
 Find the coverage report here: https://app.codecov.io/gh/danielheinlein/test_gh_actions
