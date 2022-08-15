@@ -3,7 +3,7 @@
 This project demonstrates the usage of github actions to
 
 - run [cmake](https://cmake.org/) to configure, compile, test
-- the last step includes coverage (without third party software, hence the custom badge from [shields.io](https://shields.io/) currently without green = success etc. colors)
+- the last step includes coverage (without third party software, hence the custom badge from [shields.io](https://shields.io/), currently without green = success etc. colors)
 - it also includes [address sanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer), [leak sanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizerLeakSanitizer), [undefined behavior sanitizer](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html)
 - creation of [doxygen](https://doxygen.nl/) documentation
 - use a new build without coverage and sanitizers for [valgrind](https://valgrind.org/)/[cachegrind](https://valgrind.org/docs/manual/cg-manual.html) to count performance statistics (note that github actions run virtualized)
