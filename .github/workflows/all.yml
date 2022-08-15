@@ -65,7 +65,11 @@ jobs:
 
       - name: valgrind
         working-directory: ${{github.workspace}}/build
-        run: sudo valgrind --tool=cachegrind ./hello_world > ../html/cachegrind/cachegrind.txt 2>&1
+        run: sudo valgrind --tool=cachegrind ./hello_world > cachegrind.txt 2>&1
+
+      - name: print
+        working-directory: ${{github.workspace}}/build
+        run: cat cachegrind.txt
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
