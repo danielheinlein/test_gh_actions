@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/danielheinlein/test_gh_actions/branch/master/graph/badge.svg?token=UISQJ39XJP)](https://codecov.io/gh/danielheinlein/test_gh_actions)
+[![coverage badge](https://img.shields.io/badge/dynamic/xml?url=https://danielheinlein.github.io/test_gh_actions/coverage/index.html&query=/html/body/table[1]/tr[3]/td/table/tr[2]/td[7]&label=coverage)](https://danielheinlein.github.io/test_gh_actions/coverage/)
 
 This project demonstrates the usage of github actions to
 
@@ -8,6 +8,6 @@ This project demonstrates the usage of github actions to
 - creation of [doxygen](https://doxygen.nl/) documentation
 - publishing to github pages
 
-Find the coverage report here: https://app.codecov.io/gh/danielheinlein/test_gh_actions
+Find the coverage report here: https://danielheinlein.github.io/test_gh_actions/coverage/
 
 and the documentation here: https://danielheinlein.github.io/test_gh_actions/main_8cpp.html
