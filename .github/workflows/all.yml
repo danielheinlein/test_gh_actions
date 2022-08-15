@@ -48,6 +48,7 @@ jobs:
         run: sudo apt-get install -y valgrind
 
       - name: valgrind
+        working-directory: ${{github.workspace}}/build
         run: valgrind --tool=cachegrind ./hello_world
 
       - name: Deploy
