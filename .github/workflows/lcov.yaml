@@ -1,0 +1,52 @@
+name: Lcov
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Doxygen Action
+        uses: mattnotmitt/doxygen-action@1.9.4
+
+      - name: Configure CMake
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_CXX_FLAGS="--coverage"
+
+      - name: Build
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+      - name: Test
+        working-directory: ${{github.workspace}}/build
+        run: ctest -C ${{env.BUILD_TYPE}} -T test -T coverage
+
+      - name: geninfo
+        working-directory: ${{github.workspace}}/build
+        run: geninfo CMakeFiles/*/src
+
+      - name: genhtml
+        working-directory: ${{github.workspace}}/build
+        run: genhtml CMakeFiles/*/src/*.gcda.info -o html/coverage
+
+      - name: print results
+        working-directory: ${{github.workspace}}/build
+        run: find
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html
