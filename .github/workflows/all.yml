@@ -33,7 +33,7 @@ jobs:
       - name: Doxygen Action
         uses: mattnotmitt/doxygen-action@1.9.4
 
-      - name: Chmod html
+      - name: chmod html
         run: sudo chmod 777 html
 
       - name: Install lcov
@@ -44,13 +44,12 @@ jobs:
         run: geninfo CMakeFiles/*/src
 
       - name: genhtml
-        working-directory: ${{github.workspace}}
         run: genhtml build/CMakeFiles/*/src/*.gcda.info -o ./html/coverage
 
       - name: Install valgrind
         run: sudo apt-get install -y valgrind
 
-      - name: rm
+      - name: rm build
         run: rm -r build/*
 
       - name: Configure CMake (no coverage, no sanitizer)
@@ -61,10 +60,6 @@ jobs:
 
       - name: mkdir for valgrind
         run: mkdir html/cachegrind
-
-      - name: print all
-        working-directory: ${{github.workspace}}
-        run: find
 
       - name: valgrind
         run: valgrind --tool=cachegrind build/hello_world > html/cachegrind/cachegrind.txt 2>&1
@@ -77,5 +72,4 @@ jobs:
           publish_dir: ./html
 
       # - name: print all
-      #   working-directory: ${{github.workspace}}
       #   run: find
