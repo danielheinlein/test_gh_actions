@@ -45,8 +45,7 @@ jobs:
         run: sudo genhtml build/CMakeFiles/*/src/*.gcda.info -o ./html/coverage
 
       - name: perf
-        run: sudo echo 1 > /proc/sys/kernel/perf_event_paranoid
-        run: perf stat ./hello_world
+        run: sudo echo 1 > /proc/sys/kernel/perf_event_paranoid && perf stat ./hello_world
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
