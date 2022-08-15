@@ -45,7 +45,7 @@ jobs:
 
       - name: genhtml
         working-directory: ${{github.workspace}}
-        run: genhtml build/CMakeFiles/*/src/*.gcda.info -o ./html/coverage
+        run: sudo genhtml build/CMakeFiles/*/src/*.gcda.info -o ./html/coverage
 
       - name: print build directory
         working-directory: ${{github.workspace}}/build
