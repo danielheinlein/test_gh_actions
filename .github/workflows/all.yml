@@ -57,7 +57,7 @@ jobs:
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: mkdir for valgrind
-        run: mkdir html/cachegrind
+        run: sudo mkdir html/cachegrind
 
       - name: valgrind
         working-directory: ${{github.workspace}}/build
