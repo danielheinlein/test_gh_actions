@@ -44,6 +44,9 @@ jobs:
         working-directory: ${{github.workspace}}
         run: sudo genhtml build/CMakeFiles/*/src/*.gcda.info -o ./html/coverage
 
+      - name: Install valgrind
+        run: sudo apt-get install -y valgrind
+
       - name: valgrind
         run: valgrind --tool=cachegrind ./hello_world
 
