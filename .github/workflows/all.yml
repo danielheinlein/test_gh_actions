@@ -54,3 +54,7 @@ jobs:
       # - name: print all
       #   working-directory: ${{github.workspace}}
       #   run: find
+
+
+      - name: perf
+        run: perf stat ./hello_world

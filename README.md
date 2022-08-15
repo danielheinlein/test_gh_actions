@@ -3,7 +3,7 @@
 This project demonstrates the usage of github actions to
 
 - run [cmake](https://cmake.org/) to configure, compile, test
-- the last step includes coverage
+- the last step includes coverage (without third party software)
 - [address sanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer), [leak sanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizerLeakSanitizer), [undefined behavior sanitizer](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html)
 - creation of [doxygen](https://doxygen.nl/) documentation
 - publishing to github pages
