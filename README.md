@@ -6,8 +6,11 @@ This project demonstrates the usage of github actions to
 - the last step includes coverage (without third party software)
 - [address sanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer), [leak sanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizerLeakSanitizer), [undefined behavior sanitizer](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html)
 - creation of [doxygen](https://doxygen.nl/) documentation
+- use [valgrind](https://valgrind.org/)/[cachegrind](https://valgrind.org/docs/manual/cg-manual.html) to count performance statistics (note that github actions run virtualized)
 - publishing to github pages
 
-Find the coverage report here: https://danielheinlein.github.io/test_gh_actions/coverage/
+Find the documentation here: https://danielheinlein.github.io/test_gh_actions/main_8cpp.html
 
-and the documentation here: https://danielheinlein.github.io/test_gh_actions/main_8cpp.html
+and the coverage report here: https://danielheinlein.github.io/test_gh_actions/coverage/
+
+and the performance statistics here: https://danielheinlein.github.io/test_gh_actions/cachegrind/cachegrind.txt
