@@ -33,7 +33,7 @@ jobs:
         run: ctest -C ${{env.BUILD_TYPE}} -T test -T coverage
 
       - name: Install lcov
-      run: sudo apt-get install -y lcov
+        run: sudo apt-get install -y lcov
 
       - name: geninfo
         working-directory: ${{github.workspace}}/build
