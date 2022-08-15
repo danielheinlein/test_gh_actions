@@ -57,4 +57,4 @@ jobs:
 
 
       - name: perf
-        run: perf stat ./hello_world
+        run: sudo perf stat ./hello_world
